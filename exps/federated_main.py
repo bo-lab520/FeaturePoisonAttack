@@ -188,27 +188,9 @@ def FedProto_modelheter(args, train_dataset, test_dataset, user_groups, user_gro
             # 客户端训练完, 求客户端的经过模型前几层处理的数据的平均值得到特征数据原型
             agg_protos = agg_func(protos)
             # 鉴别来自客户端的不同类别的原型的平均值
-            # 两次机会，正常（1）、中毒（0.5）、挂起（0）
-            # if idx >= conf["init_user_number"]:
-            #     result = Judge_protos(agg_protos, global_protos)
-            #     if result == 0:
-            #         conf[str(idx)] -= 1
-            #         if conf[str(idx)] == 0:
-            #             conf[str(idx) + "-ers"] = round
-            #         else:
-            #             # 挂起
-            #             print("User {} is malicious attacker, dropout it!".format(idx))
-            #             conf[str(idx)] = -2
-            #             conf["running_user_number"] -= 1
-            #         for item in agg_protos.keys():
-            #             agg_protos[item] = agg_protos[item] * 0
-            #     # 从中毒状态恢复值正常
-            #     # if round == conf[str(idx) + "-ers"] * 3:
-            #     #     conf[str(idx)] = 1
-            #     # 中毒后权值减半
-            #     if conf[str(idx)] == 0:
-            #         for item in agg_protos.keys():
-            #             agg_protos[item] = agg_protos[item]*0.5
+            #
+            #
+            #
 
             local_protos[idx] = agg_protos
 
